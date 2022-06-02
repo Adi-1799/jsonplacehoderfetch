@@ -30,17 +30,19 @@ export default function Users() {
             <>
                 <Container className='p-4'>  
                 <Col md="2">
-                    <Card className='cont'>
+                    <Card className='card' style={{ width: '18rem' }}>
                     <Card.Img className='imag' variant="top" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" />  
                     <Card.Body>  
                         <Card.Title key={i}>{item.username}</Card.Title>  
                         <Card.Text key={i}>To see details of {item.name}</Card.Text>  
                         <Button variant="primary" onClick={() => {
-                                navigate("/Albums");
+                                navigate("/Login");
                                 localStorage.setItem('userid', JSON.stringify(item.id));
+                                localStorage.setItem('useremail', JSON.stringify(item.email));
+                                localStorage.setItem('username', JSON.stringify(item.username));
                                 }
                             }
-                        >Albums</Button>  
+                        >Login</Button>  
                     </Card.Body>  
                     </Card>
                 </Col>  

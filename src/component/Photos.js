@@ -34,7 +34,7 @@ const [Users, fetchUsers] = useState([])
             
               <Container className='p-4'>  
                 <Col md="2">
-                    <Card className='cont'>
+                    <Card className='card'>
                     <Card.Img className='imag' variant="top" src={item.url} />  
                     <Card.Body>  
                         <Card.Title key={i}>{item.id}</Card.Title>  

@@ -33,7 +33,7 @@ const [Users, fetchUsers] = useState([])
             
               <Container className='p-4'>  
                 <Col md="2">
-                    <Card className='cont'>
+                    <Card className='card'>
                     <Card.Img className='imag' variant="top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2smwL5rVFct90vEJayxS6oBai2MoenC_Cpg&usqp=CAU" />  
                     <Card.Body>  
                         <Card.Title key={i}>{item.id}</Card.Title>  
