@@ -27,9 +27,17 @@ const [Users, fetchUsers] = useState([])
   return (
     
     <div className="App" style={{ position: 'absolute', display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>  
-             <Button block="true" size="lg" type="submit" style={{display:"flex",float:"left"}} onClick ={() => {
-            localStorage.removeItem('albumid');
-            navigate('/');}} >Logout</Button>
+             <Button block="true" size="lg" type="submit" style={{position:'relative',
+                marginBottom:'20px',
+                marginLeft:'90%',
+                  height:'50px',
+                  width:'100px'
+                  }}
+                  onClick ={() => {
+                    localStorage.removeItem('albumid');
+                    navigate('/');
+              }} >
+            Logout</Button>
         {Users.map((item, i) => {
           if(item.albumId == albumid){
               
