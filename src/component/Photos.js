@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import "../index.css"
+
 import 'bootstrap/dist/css/bootstrap.min.css';  
-import {Container ,Card, Col, Button} from 'react-bootstrap';
+import {Container ,Card, Row, Col, Button} from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 export default function Albums() {
@@ -25,28 +25,38 @@ const [Users, fetchUsers] = useState([])
 
   
   return (
-    <div className="App">  
+    
+    <div className="App" style={{ position: 'absolute', display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>  
+             <Button block="true" size="lg" type="submit" style={{display:"flex",float:"left"}} onClick ={() => {
+            localStorage.removeItem('albumid');
+            navigate('/');}} >Logout</Button>
         {Users.map((item, i) => {
           if(item.albumId == albumid){
               
             return(
+              
             <>
-            
-              <Container className='p-4'>  
-                <Col md="2">
-                    <Card className='card'>
+              <Container fluid="lg" className='p-3' style={{ maxWidth:'fit-content' }} > 
+                <Row lg="auto">
+
+                <Col lg="auto">
+                    <Card className='card' style={{ width: '18rem' }}>
                     <Card.Img className='imag' variant="top" src={item.url} />  
                     <Card.Body>  
                         <Card.Title key={i}>{item.id}</Card.Title>  
                         <Card.Text key={i}>{item.title}</Card.Text> 
                     </Card.Body>  
                     </Card>
-                </Col>  
+                </Col>
+                </Row>  
                 </Container>  
             </>
             )
           }
         })}
+        
+           
+
         </div>
   )
 }
