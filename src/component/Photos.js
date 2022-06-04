@@ -22,7 +22,10 @@ const [Users, fetchUsers] = useState([])
     }, [])
 
     let navigate = useNavigate();
-
+    if (!albumid) {
+      navigate("/");
+     }
+     else{
   
   return (
     
@@ -39,7 +42,7 @@ const [Users, fetchUsers] = useState([])
               }} >
             Logout</Button>
         {Users.map((item, i) => {
-          if(item.albumId == albumid){
+          if(item.albumId === albumid){
               
             return(
               
@@ -67,4 +70,5 @@ const [Users, fetchUsers] = useState([])
 
         </div>
   )
+}
 }

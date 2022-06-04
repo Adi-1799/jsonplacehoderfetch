@@ -18,10 +18,14 @@ export default function Login() {
     
 
 let navigate = useNavigate();
-
+if (!useremail) {
+  navigate("/");
+ }
+ else{
 
 const Demo=()=>{
-  return ((useremail === email) && (userpass === password)) ? alert("Wrong credentials") : navigate('/Albums') ;}        
+  return ((useremail === email) && (userpass === password)) ? alert("Wrong credentials") : navigate('/Albums') ;
+}        
 
   return (
     <div className="Login">
@@ -52,3 +56,4 @@ const Demo=()=>{
     </div>
   );
   }
+}

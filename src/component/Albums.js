@@ -23,9 +23,14 @@ const [Users, fetchUsers] = useState([])
 
     let navigate = useNavigate();
 
+if (!userid) {
+    navigate("/");
+   }
+   else{
   
   return (
-    <div className="App" style={{ position: 'absolute', display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>  
+    <div className="App" style={{ position: 'absolute', display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
+      
         {Users.map((item, i) => {
           if(item.userId == userid){
             return(
@@ -61,4 +66,5 @@ const [Users, fetchUsers] = useState([])
         })}
         </div>
   )
+}
 }
